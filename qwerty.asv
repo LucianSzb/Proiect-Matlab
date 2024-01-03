@@ -25,14 +25,12 @@ playNumberAsAudio(currentTime(4));
 sound(y2, Fs2); % Redare si
 pause(length(y2)/Fs2 + 1); % Pauză între redări
 playNumberAsAudio(currentTime(5));
-
 sound(y3, Fs3); % Redare deMinute
 pause(length(y3)/Fs3 + 1); % Pauză între redări
 sound(y2, Fs2); % Redare si
 pause(length(y2)/Fs2 + 1); % Pauză între redări
 playNumberAsAudio(fix(currentTime(6)));
-%playNumberAsAudio(00);
-pause(length(y2)/Fs2 + 1);
+
 sound(y4, Fs4); % Redare deSecunde
     
 
@@ -44,10 +42,7 @@ zeciFiles = {'zece.m4a', 'douazeci.m4a', 'treizeci.m4a', 'patruzeci.m4a', 'cinci
 suteFiles = {'osuta.m4a', 'douasute.m4a', 'treisute.m4a', 'patrusute.m4a', 'cincisute.m4a', 'sasesute.m4a', 'saptesute.m4a', 'optsute.m4a', 'nouasute.m4a'};
 miimiFiles = {'omie.m4a', 'douami.m4a', 'treimi.m4a', 'patrumi.m4a', 'cincimi.m4a', 'sasemi.m4a', 'saptemi.m4a', 'optmi.m4a', 'nouami.m4a'};
 siFile = 'si.m4a';
-if(numar==00)
-    sound(audioread('zero.m4a'), 44100);
-else
-
+if()
 % Completarea numărului cu zerouri în față pentru a avea exact 4 cifre
 numar = sprintf('%04d', numar);
 
@@ -84,7 +79,6 @@ for i = 1:length(cifre)
             break;
     end
     pause(1); % Așteaptă 1 secundă între redarea fiecărei cifre
-end
 end
 end
 

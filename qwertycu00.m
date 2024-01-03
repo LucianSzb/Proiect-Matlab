@@ -1,4 +1,5 @@
 %functioneaza dar mai am de optimizat 
+tic;
 % Apelul funcției cu currentTime
 % Obține ora locală
 currentTime = clock;
@@ -48,7 +49,7 @@ sound(y2, Fs2); % Redare si
 pause(length(y2)/Fs2 + 1); % Pauză între redări
 %playNumberAsAudio(fix(currentTime(6)));
 if(fix(currentTime(6))==00)
-    playNumberAsAudio(fix(currentTime(6)));
+    playNumberAsAudio(fix(currentTime(6))); 
     pause(length(y2)/Fs2 );
 else
     playNumberAsAudio(fix(currentTime(6)));
@@ -57,7 +58,9 @@ end
 
 pause(length(y2)/Fs2 + 1);
 sound(y4, Fs4); % Redare deSecunde
-    
+
+elapsedTime = toc; % This will give you the elapsed time in seconds
+disp(['Elapsed time: ', num2str(elapsedTime), ' seconds']);
 
 function playNumberAsAudio(numar)
 % Definirea listelor de fișiere audio pentru fiecare categorie
@@ -67,6 +70,7 @@ zeciFiles = {'zece.m4a', 'douazeci.m4a', 'treizeci.m4a', 'patruzeci.m4a', 'cinci
 suteFiles = {'osuta.m4a', 'douasute.m4a', 'treisute.m4a', 'patrusute.m4a', 'cincisute.m4a', 'sasesute.m4a', 'saptesute.m4a', 'optsute.m4a', 'nouasute.m4a'};
 miimiFiles = {'omie.m4a', 'douami.m4a', 'treimi.m4a', 'patrumi.m4a', 'cincimi.m4a', 'sasemi.m4a', 'saptemi.m4a', 'optmi.m4a', 'nouami.m4a'};
 siFile = 'si.m4a';
+
 if(numar==00)
     sound(audioread('zero.m4a'), 44100);
 else
